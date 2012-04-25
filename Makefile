@@ -34,11 +34,13 @@
 # make world #############################################################
 
 
+bin:
+	mkdir -p bin
 
-world:
+world: bin
 	cd src; make install
 
-world.byt:
+world.byt: bin
 	cd src; make install.byt
 
 # cleanup ################################################################
