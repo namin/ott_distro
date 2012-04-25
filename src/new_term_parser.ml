@@ -579,7 +579,7 @@ let build_grammar (xd : syntaxdefn)
   let process_rule (r : rule) : unit =
     let ntr = r.rule_ntr_name in
     let nt = mknt (Nt.Orig_nt (r.rule_ntr_name, false)) in
-      if not r.rule_meta && not !fast_parse then
+      if (* not r.rule_meta && *) not !fast_parse then
         begin
           let concrete_prods = 
             List.filter (fun p -> not p.prod_meta || p.prod_sugar) r.rule_ps 
